@@ -15,12 +15,13 @@
   }
   
   .task-item .item-check {
-    background: rgba(55, 218, 149,0.2);
+    /* background: rgba(55, 218, 149,0.2); */
     border-radius: 50%;
+    border: 4px #37da95 solid;
+    background: rgba(255,255,255, 0.1);
     width: 2.5em;
     height: 2.5em;
-    border: none;
-    cursor: pointer;
+    cursor:pointer;
   }
 
   .task-item .item-check:hover {
@@ -32,11 +33,19 @@
     width: 2.5em;
     height: 2.5em;
     border: none;
-    cursor: pointer;
+    cursor:auto;
+  }
+
+  .task-item .item-check--active:hover {
+    background: #37da95;
   }
   
-  .task-item p {
+  .task-item .item-tetxt {
     width: 70%;
+  }
+
+  .task-item .item-tetxt--active {
+    text-decoration:line-through;
   }
   
   .task-item .item-close{
