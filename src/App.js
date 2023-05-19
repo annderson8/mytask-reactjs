@@ -11,9 +11,9 @@ function App() {
       <TaskHeader />
       <TaskFilter />
       <TaskList>
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
+        <TaskItem text={"Make bed "} />
+        <TaskItem text={"Make breakfast "} />
+        <TaskItem text={"Take a shower "} />
       </TaskList>
       <TaskCreator />
     </>

@@ -2,7 +2,7 @@ import "./style.css";
 
 function TaskCreator() {
   return (
-    <div className="createTodo-container">
+    <div className="task-creator">
       <button>
         +
       </button>

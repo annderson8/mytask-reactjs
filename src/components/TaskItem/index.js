@@ -1,10 +1,10 @@
 import "./style.css";
 
-function TaskItem() {
+function TaskItem( {text} ) {
   return (
     <li className="task-item">
       <button className="item-check"></button>
-      <p>Task</p>
+      <p>{text}</p>
       <button className="item-close">X</button>
     </li>
   );

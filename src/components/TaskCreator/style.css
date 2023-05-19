@@ -1,0 +1,27 @@
+.task-creator{
+    color: white;
+}
+
+.task-creator button{
+    border-radius: 50%;
+    background: rgba(55,218,149,0.7);
+    /* background: #1e4345; */
+    color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 2em;
+    width: 2.2em;
+    height: 2.2em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+    bottom: 2rem;
+    right: 2rem;
+    transition: all ease .25s;
+}
+
+
+.task-creator button:hover {
+    background: rgba(55,218,149,1);
+}

@@ -2,8 +2,8 @@ import "./style.css";
 
 function TaskFilter() {
   return (
-    <div className="search-container">
-      <input placeholder="Create your Tasks here" />
+    <div className="task-filter">
+      <input placeholder="Filter your Tasks here" />
     </div>
   );
 }

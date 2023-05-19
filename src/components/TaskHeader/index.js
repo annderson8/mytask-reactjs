@@ -1,13 +1,14 @@
-import './style.css';
+import "./style.css";
 
-function TaskHeader()
-{
-    return(
-        <>
-            <h1> Wellcome to My Task</h1>
-            <h2> You have completed 2 Task ou of 10 </h2>
-        </>
-    );
+function TaskHeader() {
+  return (
+    <header className="task-header">
+      <h1> Welcome to <span>My Task</span></h1>
+      <h2>
+        You have completed <span>2</span> Tasks of <span>5</span>
+      </h2>
+    </header>
+  );
 }
 
-export { TaskHeader }
+export { TaskHeader };

@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 4rem;
+    height: 4em;
     margin: 0.4rem 0;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: #11111b;
@@ -24,11 +24,11 @@
   }
 
   .task-item .item-check:hover {
-    background: rgba(55, 218, 149,0.7);
+    background: rgba(55, 218, 149,0.6);
   }
   
   .task-item .item-check--active {
-    background: #1e4345;
+    background: #37da95;
     width: 2.5em;
     height: 2.5em;
     border: none;
@@ -42,6 +42,7 @@
   .task-item .item-close{
     background: rgba(204, 51, 51,0.3);
     color: white;
+    font-weight: 700;
     border-radius: 50%;
     width: 2.5em;
     height: 2.5em;

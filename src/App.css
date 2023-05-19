@@ -48,4 +48,5 @@ body {
   border-radius: 10px;
   display: grid;
   place-items: center;
+  position: relative;
 }

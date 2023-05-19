@@ -1,0 +1,25 @@
+.task-header {
+    color: white;
+    text-align: center ;
+}
+
+.task-header h1 {
+    margin-bottom: 1em;
+}
+
+.task-header h1 span{
+    padding: 5px  10px;
+    border-radius: 5px;
+    border: 2px #37da95  solid;
+    box-shadow: rgba(255, 255, 255, 0.2) 2px 4px 5px;
+}
+
+
+.task-header h2 {
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+
+.task-header h2 span {
+    font-weight: 700;
+}
