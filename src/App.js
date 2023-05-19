@@ -15,6 +15,9 @@ function App() {
 
   const [tasks, setTask] = React.useState(defaultTask);
 
+  const totalTask = tasks.length;
+  const totalCompletedTask = tasks.filter( task => !!task.completed).length;
+
   const completeTask = (text) => {
     const newTasks = [...tasks];
     const taskIndex = newTasks.findIndex((task) => task.text === text);
@@ -31,7 +34,11 @@ function App() {
 
   return (
     <>
-      <TaskHeader />
+      <TaskHeader
+        completed={totalCompletedTask}
+        total= {totalTask}
+
+      />
       <TaskFilter />
       <TaskList>
         {tasks.map((task) => (
