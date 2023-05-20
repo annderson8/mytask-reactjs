@@ -11,12 +11,24 @@ function App() {
     { text: "Make bed", completed: false },
     { text: "Make breakfast", completed: false },
     { text: "Take a shower", completed: true },
-  ];
+    { text: "Going to work", completed: false },
+  ]
 
   const [tasks, setTask] = React.useState(defaultTask);
+  const [filterValue, setFilterValue] = React.useState('');
 
   const totalTask = tasks.length;
   const totalCompletedTask = tasks.filter( task => !!task.completed).length;
+
+  const filteredTask = tasks.filter(
+    (task) => {
+      const taskText = task.text.toLowerCase();
+      const filterText = filterValue.toLowerCase();
+      return taskText.includes(filterText);
+    }
+  );
+
+  console.log(filteredTask);
 
   const completeTask = (text) => {
     const newTasks = [...tasks];
@@ -37,11 +49,13 @@ function App() {
       <TaskHeader
         completed={totalCompletedTask}
         total= {totalTask}
-
       />
-      <TaskFilter />
+      <TaskFilter
+        filterValue={filterValue}
+        setFilterValue={setFilterValue} />
+
       <TaskList>
-        {tasks.map((task) => (
+        {filteredTask.map((task) => (
           <TaskItem
             key={task.text}
             text={task.text}
