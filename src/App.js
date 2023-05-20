@@ -6,6 +6,30 @@ import { TaskHeader } from "./components/TaskHeader";
 import { TaskItem } from "./components/TaskItem";
 import { TaskList } from "./components/TaskList";
 
+
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+
+  let parsedItem;
+  
+  if (!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
+  } else {
+    parsedItem = JSON.parse(localStorageItem);
+  }
+
+  const [item, setItem] = React.useState(parsedItem);
+
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+}
+
+
 function App() {
   const defaultTask = [
     { text: "Make bed", completed: false },
@@ -14,11 +38,15 @@ function App() {
     { text: "Going to work", completed: false },
   ]
 
-  const [tasks, setTask] = React.useState(defaultTask);
+
+  const [tasks, saveTasks] = useLocalStorage('TASKS_V1', defaultTask);
+  
   const [filterValue, setFilterValue] = React.useState('');
 
   const totalTask = tasks.length;
   const totalCompletedTask = tasks.filter( task => !!task.completed).length;
+
+
 
   const filteredTask = tasks.filter(
     (task) => {
@@ -28,20 +56,18 @@ function App() {
     }
   );
 
-  console.log(filteredTask);
-
   const completeTask = (text) => {
     const newTasks = [...tasks];
     const taskIndex = newTasks.findIndex((task) => task.text === text);
     newTasks[taskIndex].completed = true;
-    setTask(newTasks);
+    saveTasks(newTasks);
   };
 
   const deleteTask = (text) => {
     const newTasks = [...tasks];
     const taskIndex = newTasks.findIndex((task) => task.text === text);
     newTasks.splice(taskIndex, 1);
-    setTask(newTasks);
+    saveTasks(newTasks);
   };
 
   return (
