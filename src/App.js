@@ -5,15 +5,19 @@ import { Index } from "./pages";
 
 
 function App() {
-  const defaultTask = [
-    { text: "Make bed", completed: false },
-    { text: "Make breakfast", completed: false },
-    { text: "Take a shower", completed: true },
-    { text: "Going to work", completed: false },
-  ]
+  // const defaultTask = [
+  //   { text: "Make bed", completed: false },
+  //   { text: "Make breakfast", completed: false },
+  //   { text: "Take a shower", completed: true },
+  //   { text: "Going to work", completed: false },
+  // ]
 
-
-  const [tasks, saveTasks] = useLocalStorage('TASKS_V1', defaultTask);
+  const {
+    item: tasks,
+    saveItem: saveTasks,
+    loading,
+    error,
+    } = useLocalStorage('TASKS_V1', []);
 
   const [filterValue, setFilterValue] = React.useState('');
 
@@ -47,6 +51,8 @@ function App() {
   return (
     <>
       <Index
+        loading={loading}
+        error={error}
         totalCompletedTask = {totalCompletedTask}
         totalTask = {totalTask}
         filterValue = {filterValue}

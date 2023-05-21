@@ -5,29 +5,37 @@ import { TaskFilter } from "../components/TaskFilter";
 import { TaskList } from "../components/TaskList";
 import { TaskItem } from "../components/TaskItem";
 import { TaskCreator } from "../components/TaskCreator";
+import { TasksLoading } from "../components/TasksLoading";
+import { TasksError } from "../components/TasksError";
+import { TasksEmpty } from "../components/TasksEmpty";
 
-function Index ( {
-    totalCompletedTask,
-    totalTask,
-    filterValue,
-    setFilterValue,
-    filteredTask,
-    completeTask,
-    deleteTask
-
-}){
-
-    return (
-        <>
-      <TaskHeader
-        completed={totalCompletedTask}
-        total= {totalTask}
-      />
-      <TaskFilter
-        filterValue={filterValue}
-        setFilterValue={setFilterValue} />
+function Index({
+  loading,
+  error,
+  totalCompletedTask,
+  totalTask,
+  filterValue,
+  setFilterValue,
+  filteredTask,
+  completeTask,
+  deleteTask,
+}) {
+  return (
+    <>
+      <TaskHeader completed={totalCompletedTask} total={totalTask} />
+      <TaskFilter filterValue={filterValue} setFilterValue={setFilterValue} />
 
       <TaskList>
+        {loading && (
+          <>
+            <TasksLoading />
+            <TasksLoading />
+            <TasksLoading />
+          </>
+        )}
+        {error && <TasksError />}
+        {!loading && filteredTask.length === 0 && <TasksEmpty />}
+
         {filteredTask.map((task) => (
           <TaskItem
             key={task.text}
@@ -40,8 +48,7 @@ function Index ( {
       </TaskList>
       <TaskCreator />
     </>
-    );
-
+  );
 }
 
-export { Index }
+export { Index };
