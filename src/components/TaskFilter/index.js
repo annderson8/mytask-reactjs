@@ -1,6 +1,13 @@
+import React, { useContext } from "react";
 import "./style.css";
+import { TaskContext } from "../../contexts/TaskContext";
 
-function TaskFilter( {filterValue, setFilterValue}) {
+function TaskFilter() {
+  const {
+    filterValue,
+    setFilterValue,
+  } = useContext(TaskContext);
+
   return (
     <div className="task-filter">
       <input 

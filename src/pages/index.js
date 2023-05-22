@@ -8,22 +8,21 @@ import { TaskCreator } from "../components/TaskCreator";
 import { TasksLoading } from "../components/TasksLoading";
 import { TasksError } from "../components/TasksError";
 import { TasksEmpty } from "../components/TasksEmpty";
+import { TaskContext } from "../contexts/TaskContext";
 
-function Index({
-  loading,
-  error,
-  totalCompletedTask,
-  totalTask,
-  filterValue,
-  setFilterValue,
-  filteredTask,
-  completeTask,
-  deleteTask,
-}) {
+function Index() {
+
+  const {
+    loading,
+    error,
+    filteredTask,
+    completeTask,
+    deleteTask,
+  } = React.useContext(TaskContext);
   return (
     <>
-      <TaskHeader completed={totalCompletedTask} total={totalTask} />
-      <TaskFilter filterValue={filterValue} setFilterValue={setFilterValue} />
+      <TaskHeader/>
+      <TaskFilter/>
 
       <TaskList>
         {loading && (

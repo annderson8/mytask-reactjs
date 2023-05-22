@@ -1,23 +1,30 @@
 import "./style.css";
+import { TaskContext } from "../../contexts/TaskContext";
+import React from "react";
 
-function TaskHeader({ completed, total }) {
+function TaskHeader() {
+  const {
+    totalTask,
+    totalCompletedTask,
+  } = React.useContext(TaskContext);
+
   return (
     <header className="task-header">
       <h1> Welcome to <span>My Task</span></h1>
-      {total === completed && total > 0 && (
+      {totalTask === totalCompletedTask && totalTask > 0 && (
         <h2>
           Congratulations you have finished all your tasks
       </h2>
       )}
-      {total === completed && total <= 0 && (
+      {totalTask === totalCompletedTask && totalTask <= 0 && (
         <h2>
           You haven't pending tasks
       </h2>
       )}
 
-      { total !== completed && (
+      { totalTask !== totalCompletedTask && (
         <h2>
-          You have completed <span>{completed}</span> Tasks of <span>{total}</span>
+          You have completed <span>{totalCompletedTask}</span> Tasks of <span>{totalTask}</span>
         </h2>
       )}
     </header>
