@@ -14,12 +14,12 @@ function TaskHeader() {
       <p>In this space you can create a list of tasks and keep track of them.</p>
       {totalTask === totalCompletedTask && totalTask > 0 && (
         <h2>
-          Congratulations you have finished all your tasks
+        Great, you don't have pending tasks.
       </h2>
       )}
       {totalTask === totalCompletedTask && totalTask <= 0 && (
         <h2>
-          You haven't pending tasks
+          You have no tasks created.
       </h2>
       )}
 

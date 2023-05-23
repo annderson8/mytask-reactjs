@@ -37,7 +37,7 @@ function TaskForm() {
         X
       </button>
       <button type="submit" className="form-task-button--add">
-        Añadir
+        Create
       </button>
     </form>
   );
