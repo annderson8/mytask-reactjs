@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2em;
-    height: 24rem;
-    overflow: auto;
-    max-height: 38rem;
+    margin-top: 1.2em;
+    max-height: 25em;
+    overflow-y: auto;
+    gap: 0.5rem;
+
   }

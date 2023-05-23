@@ -11,6 +11,7 @@ function TaskHeader() {
   return (
     <header className="task-header">
       <h1> Welcome to <span>My Task</span></h1>
+      <p>In this space you can create a list of tasks and keep track of them.</p>
       {totalTask === totalCompletedTask && totalTask > 0 && (
         <h2>
           Congratulations you have finished all your tasks

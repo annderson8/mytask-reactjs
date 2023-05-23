@@ -1,17 +1,15 @@
 .task-item {
-    width: 90%;
+    width: 80%;
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 4em;
-    margin: 0.4rem 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: #11111b;
     color: white;
     font-weight: 700;
     border-radius: 10px;
+    padding: 1.25rem;
   }
   
   .task-item .item-check {

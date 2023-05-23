@@ -9,6 +9,8 @@ import { TasksLoading } from "../components/TasksLoading";
 import { TasksError } from "../components/TasksError";
 import { TasksEmpty } from "../components/TasksEmpty";
 import { TaskContext } from "../contexts/TaskContext";
+import { TaskForm } from "../components/TaskForm";
+import { Modal } from "../components/Modal";
 
 function Index() {
 
@@ -18,6 +20,8 @@ function Index() {
     filteredTask,
     completeTask,
     deleteTask,
+    openModal,
+    setOpenModal,
   } = React.useContext(TaskContext);
   return (
     <>
@@ -45,7 +49,15 @@ function Index() {
           />
         ))}
       </TaskList>
-      <TaskCreator />
+      <TaskCreator
+        setOpenModal = {setOpenModal}
+       />
+
+      { openModal  && 
+        <Modal>
+          <TaskForm/>
+        </Modal>
+      }
     </>
   );
 }

@@ -1,7 +1,33 @@
 
-.item-empty p
+.item-empty{
+    text-align: center;
+}
+
+.item-empty .title-empty
 {
     color : white;
     font-weight: 700;
     font-size: 1.3em;
+    margin: 1.5em 0;
+}
+
+.subtitle-empty {
+    color : rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 2em;
+    padding: 0 2em;
+    font-style: italic;
+}
+
+
+.button-empty{
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-weight: 700;
+    font-size: 2em;
+    width: 2.2em;
+    height: 2.2em;
 }
